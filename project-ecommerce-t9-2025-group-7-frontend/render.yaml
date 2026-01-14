@@ -1,0 +1,14 @@
+services:
+  - type: web
+    name: frontend
+    env: node
+    plan: free
+    buildCommand: npm install && npm run build
+    startCommand: npm run start:prod
+    staticPublishPath: ./build
+    envVars:
+      - key: REACT_APP_DOMAIN
+        sync: false
+      - key: REACT_APP_DOMAIN_SERVER
+        sync: false
+
